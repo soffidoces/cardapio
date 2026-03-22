@@ -50,7 +50,7 @@
                 background: var(--cream);
                 color: var(--text-dark);
                 font-family: var(--sans);
-                font-weight: 300;
+                font-weight: 400; /* Aumentado de 300 para 400 para melhor leitura */
                 line-height: 1.6;
                 -webkit-font-smoothing: antialiased;
             }
@@ -547,10 +547,21 @@
             }
 
             .card-desc {
-                font-size: 0.8rem;
-                color: var(--text-light);
-                line-height: 1.55;
-                flex: 1;
+                font-family: var(--sans); /* Usa a Jost para o texto corrido */
+                font-size: 0.95rem;
+                color: var(--text-mid);
+                line-height: 1.6;
+            }
+
+            .card-desc strong {
+                font-family: var(
+                    --serif
+                ); /* Usa a Cormorant Garamond, igual ao título */
+                font-size: 1.15rem;
+                font-weight: 600;
+                color: var(--choc-deep);
+                display: block; /* Coloca o nome do sabor numa linha própria para maior elegância */
+                margin-bottom: 2px;
             }
 
             .card-footer {
@@ -590,6 +601,18 @@
             .card-cta:hover {
                 background: var(--gold);
                 color: var(--choc-deep);
+            }
+
+            .card-desc ul {
+                list-style-type: none !important; /* O !important garante que nenhuma outra regra interfira */
+                padding: 0 !important; /* Remove o recuo padrão que causa o erro de proximidade lateral */
+                margin: 15px 0 0 0;
+            }
+
+            .card-desc li {
+                margin-bottom: 12px;
+                padding: 0;
+                text-align: left;
             }
 
             /* ── FOOTER ── */
@@ -759,7 +782,7 @@
                     </div>
                     <div class="logo-name">Soffi Doces</div>
                     <div class="logo-tagline">
-                        Doçura artesanal &nbsp;·&nbsp; Momentos especiais
+                        Confeitaria artesanal &nbsp;·&nbsp; Momentos especiais
                     </div>
                 </div>
             </div>
@@ -769,7 +792,7 @@
                 <div class="banner-placeholder-bg">
                     <div class="banner-placeholder-pattern"></div>
                     <img
-                        src="banner_capa.jpg"
+                        src="./assets/banner_capa.jpg"
                         alt="Chocolates artesanais de Páscoa"
                         style="
                             position: absolute;
@@ -839,8 +862,8 @@
                             <span class="ic">📍</span>
                             <span
                                 ><strong>Importante:</strong> Não realizamos
-                                entregas. A retirada deve ser feita no local
-                                combinado.</span
+                                entregas. A retirada deve ser feita no
+                                local.</span
                             >
                         </li>
                     </ul>
@@ -890,8 +913,8 @@
                             <span>ovo_trufado_belga.jpg</span>
                         </div>
                         <img
-                            src="ovo_trufado_belga.jpg"
-                            alt="Ovo Trufado Belga"
+                            src="./assets/banner_capa.jpg"
+                            alt="Trilogia Clássica Soffi"
                             style="
                                 position: absolute;
                                 inset: 0;
@@ -901,18 +924,51 @@
                             "
                             onerror="this.style.display = 'none'"
                         />
-                        <span class="card-badge">⭐ Top</span>
+                        <span class="card-badge">⭐ Mais pedido</span>
                     </div>
                     <div class="card-body">
-                        <div class="card-name">Ovo Trufado Belga</div>
-                        <p class="card-desc">
-                            Chocolate belga meio amargo recheado com brigadeiro
-                            trufado cremoso, finalizado com cacau premium em pó.
-                            450g de puro prazer.
-                        </p>
+                        <div class="card-name">Trilogia Clássica Soffi</div>
+                        <div class="card-desc">
+                            Uma jornada de sabores em três tempos.
+                            <ul>
+                                <li>
+                                    <strong>Chocolatudo:</strong>
+                                    Chocolate intenso com a textura única da
+                                    nossa casca de brownie.
+                                </li>
+                                <li>
+                                    <strong>Ninho com Nutella:</strong>
+                                    O encontro da suavidade com a intensidade.
+                                    Camadas Ninho que derretem na boca,
+                                    intercaladas com a cremosidade inconfundível
+                                    da Nutella pura. O equilíbrio ideal entre o
+                                    doce do leite e o sabor marcante da avelã
+                                </li>
+                                <li>
+                                    <strong>Dois Amores:</strong>
+                                    A união irresistível do chocolate ao leite
+                                    com o chocolate branco cremoso.
+                                </li>
+                            </ul>
+                            <p
+                                style="
+                                    margin-top: 10px;
+                                    font-size: 0.8rem;
+                                    font-style: italic;
+                                    color: var(--text-light);
+                                "
+                            >
+                                * Cascas produzidas em moldes de 50g.
+                            </p>
+                        </div>
                         <div class="card-footer">
-                            <span class="card-price">R$ 89,00</span>
-                            <a href="#footer" class="card-cta">Pedir</a>
+                            <span class="card-price">R$ 30,00</span>
+                            <a
+                                href="https://wa.me/5547992667343?text=Olá!%20Gostaria%20de%20encomendar%20a%20Trilogia%20Clássica%20Soffi%20no%20valor%20de%20R$%2030,00"
+                                class="card-cta"
+                                target="_blank"
+                                >Pedir</a
+                            >
                         </div>
                     </div>
                 </div>
@@ -976,10 +1032,10 @@
                             "
                         >
                             <span class="egg-icon">🥚</span>
-                            <span>ovo_de_colher.jpg</span>
+                            <span>Duo Premium</span>
                         </div>
                         <img
-                            src="ovo_de_colher.jpg"
+                            src="./assets/duo_premium.png"
                             alt="Ovo de Colher"
                             style="
                                 position: absolute;
@@ -993,15 +1049,40 @@
                         <span class="card-badge">Novidade</span>
                     </div>
                     <div class="card-body">
-                        <div class="card-name">Ovo de Colher Ninho</div>
-                        <p class="card-desc">
-                            Casca de chocolate ao leite recheada com creme de
-                            leite Ninho irresistível e pedaços de biscoito
-                            amanteigado. 400g.
-                        </p>
+                        <div class="card-name">Duo Favorito Sôffi</div>
+                        <div class="card-desc">
+                            O equilíbrio perfeito entre a força do cacau e a
+                            cremosidade do leite.
+                            <ul>
+                                <li>
+                                    <strong>Chocolatudo:</strong> Casca de
+                                    brownie recheada com brigadeiro intenso.
+                                </li>
+                                <li>
+                                    <strong>Ninho com Nutella:</strong>
+                                    Brigadeiro de Ninho com o autêntico creme de
+                                    avelã.
+                                </li>
+                            </ul>
+                            <p
+                                style="
+                                    margin-top: 10px;
+                                    font-size: 0.8rem;
+                                    font-style: italic;
+                                    color: var(--text-light);
+                                "
+                            >
+                                * Cascas produzidas em moldes de 150g.
+                            </p>
+                        </div>
                         <div class="card-footer">
-                            <span class="card-price">R$ 75,00</span>
-                            <a href="#footer" class="card-cta">Pedir</a>
+                            <span class="card-price">R$ 60,00</span>
+                            <a
+                                href="https://wa.me/5547992667343?text=Olá!%20Gostaria%20de%20encomendar%20o%20Duo%20Favorito%20Soffi%20(Chocolatudo%20e%20Ninho)"
+                                class="card-cta"
+                                target="_blank"
+                                >Pedir</a
+                            >
                         </div>
                     </div>
                 </div>
