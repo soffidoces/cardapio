@@ -3,7 +3,9 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Soffi Doces – Páscoa 2026</title>
+        <title>Sôffi Doces – Páscoa 2026</title>
+        <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
+        <link rel="shortcut icon" href="./assets/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
             href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500&display=swap"
@@ -153,6 +155,74 @@
                 overflow: hidden;
                 aspect-ratio: 16/9;
                 box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+            }
+
+            /* Carrossel Geral */
+            .carousel {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+            }
+
+            .carousel-container {
+                position: relative;
+                width: 100%;
+                height: 100%;
+            }
+
+            .carousel-item {
+                position: absolute;
+                inset: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+                opacity: 0;
+                transition: opacity 0.4s ease;
+                pointer-events: none;
+            }
+
+            .carousel-item.active {
+                opacity: 1;
+                pointer-events: auto;
+            }
+
+            /* Botões do Carrossel */
+            .carousel-btn {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background: rgba(
+                    59,
+                    26,
+                    10,
+                    0.7
+                ); /* Marrom Soffi com opacidade */
+                color: var(--gold-light);
+                border: none;
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                cursor: pointer;
+                z-index: 10;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 14px;
+                transition: all 0.3s ease;
+            }
+
+            .carousel-btn:hover {
+                background: var(--choc-deep);
+                transform: translateY(-50%) scale(1.1);
+            }
+
+            .prev {
+                left: 10px;
+            }
+            .next {
+                right: 10px;
             }
 
             @media (max-width: 480px) {
@@ -780,7 +850,7 @@
                             "
                         />
                     </div>
-                    <div class="logo-name">Soffi Doces</div>
+                    <div class="logo-name">Sôffi Doces</div>
                     <div class="logo-tagline">
                         Confeitaria artesanal &nbsp;·&nbsp; Momentos especiais
                     </div>
@@ -789,29 +859,100 @@
 
             <!-- Banner -->
             <div class="banner">
-                <div class="banner-placeholder-bg">
-                    <div class="banner-placeholder-pattern"></div>
-                    <img
-                        src="./assets/banner_capa.jpg"
-                        alt="Chocolates artesanais de Páscoa"
-                        style="
-                            position: absolute;
-                            inset: 0;
-                            width: 100%;
-                            height: 100%;
-                            object-fit: cover;
-                        "
-                        onerror="this.style.display = 'none'"
-                    />
-                    <div class="banner-overlay">
-                        <div class="banner-text">
-                            <h2>
-                                Páscoa Inesquecível:<br /><span
-                                    >Reserve seus momentos doces</span
-                                >
-                            </h2>
+                <div class="carousel" id="carousel-hero">
+                    <div class="carousel-container">
+                        <div class="carousel-item active">
+                            <img
+                                src="./assets/banner_capa.jpg"
+                                alt="Páscoa Sôffi Doces"
+                            />
+                            <div class="banner-overlay">
+                                <div class="banner-text">
+                                    <h2>
+                                        Páscoa Inesquecível:<br /><span
+                                            >Reserve seus momentos doces</span
+                                        >
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="./assets/duo_premium.png"
+                                alt="Duo Premium"
+                            />
+                            <div class="banner-overlay">
+                                <div class="banner-text">
+                                    <h2>
+                                        Duo Favorito:<br /><span
+                                            >O equilíbrio perfeito do
+                                            chocolate</span
+                                        >
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="./assets/sobremesa_morango.png"
+                                alt="Duo Premium"
+                            />
+                            <div class="banner-overlay">
+                                <div class="banner-text">
+                                    <h2>
+                                        Delícia de Morango Sôffi:<br /><span
+                                            >O equilíbrio perfeito do chocolate
+                                            e o frescor do morando</span
+                                        >
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="./assets/caixa_doces.jpeg"
+                                alt="Duo Premium"
+                            />
+                            <div class="banner-overlay">
+                                <div class="banner-text">
+                                    <h2>
+                                        Caixas de brigadeiro:<br /><span
+                                            >A nossa especialidade para sua
+                                            Páscoa</span
+                                        >
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="./assets/surpresa_de_uva.png"
+                                alt="Duo Premium"
+                            />
+                            <div class="banner-overlay">
+                                <div class="banner-text">
+                                    <h2>
+                                        Caixas de brigadeiro:<br /><span
+                                            >A nossa especialidade para sua
+                                            Páscoa</span
+                                        >
+                                    </h2>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    <button
+                        class="carousel-btn prev"
+                        onclick="moveCarousel('carousel-hero', -1)"
+                    >
+                        &#10094;
+                    </button>
+                    <button
+                        class="carousel-btn next"
+                        onclick="moveCarousel('carousel-hero', 1)"
+                    >
+                        &#10095;
+                    </button>
                 </div>
             </div>
 
@@ -987,10 +1128,10 @@
                             "
                         >
                             <span class="egg-icon">🎁</span>
-                            <span>caixa_brigadeiros.jpg</span>
+                            <span>caixa_doces.jpeg</span>
                         </div>
                         <img
-                            src="caixa_brigadeiros.jpg"
+                            src="./assets/caixa_doces.jpeg"
                             alt="Caixa de Brigadeiros Gourmet"
                             style="
                                 position: absolute;
@@ -1007,13 +1148,17 @@
                             Caixa de Brigadeiros Gourmet
                         </div>
                         <p class="card-desc">
-                            12 unidades artesanais nos sabores: chocolate belga,
-                            pistache, maracujá e limão siciliano. Embalagem
-                            presenteável inclusa.
+                            Caixas com 9, 12 e 50 unidades, sabores diversos
+                            para adoçar a sua páscoa
                         </p>
                         <div class="card-footer">
-                            <span class="card-price">R$ 64,00</span>
-                            <a href="#footer" class="card-cta">Pedir</a>
+                            <span class="card-price">à partir de R$ 35,00</span>
+                            <a
+                                href="https://wa.me/5547992667343?text=Olá%20gostaria%20de%20mais%20informações%20sobre%20a%20caixa%20de%20brigadeiro%20de%20páscoa"
+                                class="card-cta"
+                                target="_blank"
+                                >Consultar</a
+                            >
                         </div>
                     </div>
                 </div>
@@ -1090,42 +1235,84 @@
                 <!-- Card 4 -->
                 <div class="card reveal">
                     <div class="card-img-wrap">
-                        <div
-                            class="card-img-placeholder"
-                            style="
-                                background: linear-gradient(
-                                    135deg,
-                                    #d9c8e0,
-                                    #9370a0
-                                );
-                            "
-                        >
-                            <span class="egg-icon">🐣</span>
-                            <span>mini_ovos_presente.jpg</span>
+                        <div class="carousel" id="carousel-sobremesas">
+                            <div class="carousel-container">
+                                <img
+                                    src="./assets/sobremesa_morango.png"
+                                    class="carousel-item active"
+                                    alt="Sobremesa Morango"
+                                />
+                                <img
+                                    src="./assets/surpresa_de_uva.png"
+                                    class="carousel-item"
+                                    alt="Sobremesa Uva"
+                                />
+                            </div>
+                            <button
+                                class="carousel-btn prev"
+                                onclick="
+                                    event.stopPropagation();
+                                    moveCarousel('carousel-sobremesas', -1);
+                                "
+                            >
+                                &#10094;
+                            </button>
+                            <button
+                                class="carousel-btn next"
+                                onclick="
+                                    event.stopPropagation();
+                                    moveCarousel('carousel-sobremesas', 1);
+                                "
+                            >
+                                &#10095;
+                            </button>
+                            <span class="card-badge">Frescor & Sabor</span>
                         </div>
-                        <img
-                            src="mini_ovos_presente.jpg"
-                            alt="Mini Ovos de Presente"
-                            style="
-                                position: absolute;
-                                inset: 0;
-                                width: 100%;
-                                height: 100%;
-                                object-fit: cover;
-                            "
-                            onerror="this.style.display = 'none'"
-                        />
                     </div>
                     <div class="card-body">
-                        <div class="card-name">Kit Mini Ovos Presente</div>
-                        <p class="card-desc">
-                            6 mini ovos individuais em sabores variados — ao
-                            leite, branco e meio amargo — em caixinha decorada
-                            para presentear com charme.
-                        </p>
+                        <div class="card-name">
+                            Sobremesas de Colher Gourmet
+                        </div>
+                        <div class="card-desc">
+                            Nossas famosas sobremesas que unem a leveza das
+                            frutas com a cremosidade do nosso chocolate
+                            artesanal.
+                            <ul>
+                                <li>
+                                    <strong
+                                        >Delícia de Morango da Sôffi:</strong
+                                    >
+                                    Camadas de creme belga, morangos frescos
+                                    selecionados e cobertura de ganache de
+                                    chocolate ao leite.
+                                </li>
+                                <li>
+                                    <strong>Surpresa de Uva Victory:</strong>
+                                    Uvas verdes premium (sem semente) envolvidas
+                                    em um creme suave e finalizadas com uma
+                                    generosa camada de chocolate.
+                                </li>
+                            </ul>
+                            <p
+                                style="
+                                    margin-top: 10px;
+                                    font-size: 0.8rem;
+                                    font-style: italic;
+                                    color: var(--text-light);
+                                "
+                            >
+                                * Disponível em travessas de aproximadamente
+                                1kg.
+                            </p>
+                        </div>
                         <div class="card-footer">
-                            <span class="card-price">R$ 48,00</span>
-                            <a href="#footer" class="card-cta">Pedir</a>
+                            <span class="card-price">R$ 130,00</span>
+                            <a
+                                href="https://wa.me/5547992667343?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20as%20Sobremesas%20de%20Colher%20(Morango%20e%20Uva)"
+                                class="card-cta"
+                                target="_blank"
+                                >Pedir</a
+                            >
                         </div>
                     </div>
                 </div>
@@ -1135,7 +1322,7 @@
         <!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
         <footer id="footer">
             <div class="footer-inner">
-                <div class="footer-logo-name">Soffi Doces</div>
+                <div class="footer-logo-name">Sôffi Doces</div>
                 <div class="footer-divider"></div>
                 <div class="footer-contact-title">
                     Entre em contato para fazer seu pedido
@@ -1219,6 +1406,31 @@
             document
                 .querySelectorAll(".reveal")
                 .forEach((el) => io.observe(el));
+
+            function moveCarousel(carouselId, direction) {
+                const carousel = document.getElementById(carouselId);
+                if (!carousel) return;
+
+                const items = carousel.querySelectorAll(".carousel-item");
+                if (items.length === 0) return;
+
+                let activeIndex = Array.from(items).findIndex((item) =>
+                    item.classList.contains("active"),
+                );
+
+                // Caso não encontre a classe active por erro de carregamento, define como 0
+                if (activeIndex === -1) activeIndex = 0;
+
+                items[activeIndex].classList.remove("active");
+                activeIndex =
+                    (activeIndex + direction + items.length) % items.length;
+                items[activeIndex].classList.add("active");
+            }
+
+            // Faz o BANNER principal girar sozinho a cada 5 segundos
+            setInterval(() => {
+                moveCarousel("carousel-hero", 1);
+            }, 5000);
         </script>
     </body>
 </html>
